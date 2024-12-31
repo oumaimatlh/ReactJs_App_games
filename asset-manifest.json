@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/ReactJs_App_games/static/css/main.3372d6a5.css",
+    "main.js": "/ReactJs_App_games/static/js/main.8784d1de.js",
+    "static/js/453.59bb3b6d.chunk.js": "/ReactJs_App_games/static/js/453.59bb3b6d.chunk.js",
+    "static/media/ff.mp4": "/ReactJs_App_games/static/media/ff.e43fd2afff8dcaef374f.mp4",
+    "static/media/videoplayback.mp4": "/ReactJs_App_games/static/media/videoplayback.bf0726cd3d5178285385.mp4",
+    "static/media/Pokemon Pikachu Dragon Anime Japan Cartoon Art Creative Design Gift Funny Cute Charmander Bulbasaur.jpeg": "/ReactJs_App_games/static/media/Pokemon Pikachu Dragon Anime Japan Cartoon Art Creative Design Gift Funny Cute Charmander Bulbasaur.67eaa68fbdbc445d8351.jpeg",
+    "static/media/toc1.jpg": "/ReactJs_App_games/static/media/toc1.709e5ce517b2063789b8.jpg",
+    "static/media/téléchargement.jpeg": "/ReactJs_App_games/static/media/téléchargement.22e8b3b753548c2d7cdf.jpeg",
+    "static/media/arbe.jpeg": "/ReactJs_App_games/static/media/arbe.6e70acbb5022de532787.jpeg",
+    "index.html": "/ReactJs_App_games/index.html",
+    "main.3372d6a5.css.map": "/ReactJs_App_games/static/css/main.3372d6a5.css.map",
+    "main.8784d1de.js.map": "/ReactJs_App_games/static/js/main.8784d1de.js.map",
+    "453.59bb3b6d.chunk.js.map": "/ReactJs_App_games/static/js/453.59bb3b6d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3372d6a5.css",
+    "static/js/main.8784d1de.js"
+  ]
+}

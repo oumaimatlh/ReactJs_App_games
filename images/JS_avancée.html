@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="P2.jpg" alt="">
+    
+    <script>
+        //Les modéles litéraux :
+            // La concaténation des chaines avancée : 
+                let name='Oumaima Talhaoui '; 
+                let salutaion =`Hello ${name}`; 
+                console.log(salutaion); 
+            //Déstructuration des Objet en Js : 
+                let Personne ={
+                    nom:'Talhaoui Oumaima ',
+                    age:20, 
+                    email: {
+                        nom_em:'Talha@gmail.com',
+                        mot_pas:'joiahaindje'
+                    }
+
+                } ; 
+                let {nom,age,email:{nom_em}}=Personne ; 
+                console.log(`My name is ${nom } and i have ${age} years old , my email is : ${nom_em} `);
+
+                //valeur par défaut : 
+                const config = {
+                    theme:'light'    // const config={}  ->   Output : dark car theme indéfined . 
+                };
+
+                const { theme = 'dark' } = config;
+                console.log(theme); // Output: light. 
+
+
+                // Renommer une propriéte par déstructuration d'un objet : 
+                    let {nom:name_}=Personne ;
+                    console.log(`My name is ${name_} and i have ${age} years old , my email is : ${nom_em} `)
+                
+
+            //Déstructuration des Tableaux(Arrays) en Js :  
+                let numeros =[1,2,3,4,5]; 
+                let [one,two,tree]=numeros; 
+                console.log(one,tree,two);
+                //Opérateur de repos L'opérateur de repos ( ...) collecte les éléments restants d'un tableau ou d'un objet dans un nouveau tableau ou objet :
+                    let [o,t,r,...R]=numeros; 
+                    console.log(o,t,r,R);
+
+                //Opérateur de propagation : utilisé pour développer un itérable en éléments individuel
+                    //Dans React, l'opérateur de propagation est souvent utilisé pour cloner des tableaux ou des objets, ou pour transmettre des accessoires aux composants :
+          
+    </script>
+</body>
+</html>
