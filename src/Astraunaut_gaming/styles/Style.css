@@ -1,0 +1,267 @@
+.container {
+    background-image: url('/public/images/téléchargement.jpeg');
+    background-repeat: no-repeat;
+    background-size :100%;
+    background-position:top;
+    background-attachment: fixed;
+    padding: 8px 70px;
+    text-align: center;
+    max-width: 50% ;
+    margin: 20px;
+    background-color: rgba(218, 168, 168, 0.034);
+    padding: 90px;
+    border-radius: 32px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 2cm;
+    left: 22cm;
+}
+
+h1 {
+    font-size: 4.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Score and Progress Bar Styling */
+.score-container {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.progress-bar-background {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Game Grid (Box) Styling */
+.box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carreau {
+    width: 300px; /* Double de la taille précédente */
+    height: 300px; /* Double de la taille précédente */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carreau:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+button {
+    width: 100%;
+    height: 60px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Reset Button */
+button.reset-button {
+    background-color: #f38a00;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.reset-button:hover {
+    background-color: #187828;
+}
+
+/* Game Finished Message */
+.game-finished-message {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Responsiveness: Ensure the grid is flexible on smaller screens */
+@media screen and (max-width: 600px) {
+    .box {
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+    }
+
+    .carreau {
+        width: 240px; /* Ajuste la taille des carreaux pour les écrans plus petits */
+        height: 240px;
+    }
+
+    .progress-bar-background {
+        height: 15px;
+    }
+
+    .progress-bar {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carreau {
+        width: 200px; /* Ajuste encore la taille des carreaux pour les très petits écrans */
+        height: 200px;
+    }
+}
+
+/* Effet de chute des emojis et bombes */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1.5;
+    }
+}
+
+.success-emoji, .bomb {
+    position: absolute;
+    font-size: 2rem;
+    animation: fall 3s ease-in forwards;
+}
+
+.success-emoji {
+    color: #ea006287;
+    top: -50px;
+    left: calc(50% - 1rem);
+    animation-delay: 0.5s;
+}
+
+.bomb {
+    color: #ff0000;
+    top: -50px;
+    left: calc(50% - 1.5rem);
+    animation-delay: 2s;
+}
+
+.falling-emoji {
+    position: absolute;
+    font-size: 5rem;
+    animation: fall 6s ease-in forwards;
+}
+
+.falling-emoji:nth-child(odd) {
+    color: #28a745;
+}
+
+.falling-emoji:nth-child(even) {
+    color: #ff0000;
+}
+
+.title {
+    color: rgb(255, 165, 0);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.23), -2px -2px 5px rgba(255, 255, 255, 0.7);
+    font-family: 'Poppins', sans-serif;
+    animation: colorChange 4s infinite, bounce 1s ease-out;
+}
+
+/* Keyframe animations */
+@keyframes colorChange {
+    0% { color: rgb(255, 165, 0); }
+    50% { color: rgb(34, 193, 195); }
+    100% { color: rgb(255, 165, 0); }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        color: transparent;
+    }
+    100% {
+        opacity: 1;
+        color: #28a745;
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        transform: rotate(-180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

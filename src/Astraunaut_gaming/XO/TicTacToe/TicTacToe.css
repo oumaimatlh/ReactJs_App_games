@@ -1,0 +1,149 @@
+.tic-container {
+    text-align: center;
+    background-color: #f4f6f9;
+    width: 1500px; /* Largeur */
+    height: 1300px; /* Hauteur */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 48cm;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 40px;
+    background-image: url("/public/images/toc1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: growAndShrink 5s infinite ease-in-out; /* Animation continue */
+    box-shadow: 0 10px 10px rgba(226, 223, 223, 0.757);
+
+}
+
+/* Animation de respiration */
+@keyframes growAndShrink {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05); /* Légèrement agrandi */
+    }
+}
+
+.title {
+    margin-top: 20px;
+    color: #6C5B7B;  
+    font-size: 80px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* Bouton Reset */
+.reset {
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #F1C40F; 
+    font-size: 20px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center; 
+}
+
+.reset:hover {
+    background-color: #9e7e98; 
+    transform: scale(1.1); /* Agrandit légèrement le bouton */
+}
+
+.reset:active {
+    transform: scale(0.95);  /* Réduit le bouton légèrement lorsqu'il est cliqué */
+}
+
+
+/* Bouton Music (identique au bouton Reset) */
+.music {
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #F1C40F;  /* Couleur bleu */
+    font-size: 20px;
+    color: white;
+    margin-top: -25px;
+    margin-bottom: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+}
+
+.music:hover {
+    background-color: #9e7e98;  /* Couleur bleu plus foncé au survol */
+    transform: scale(1.1);
+}
+
+.music:active {
+    transform: scale(0.95);
+}
+
+
+/* Tableau de jeu */
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    border: 3px solid #8187892f; 
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s ease;
+    background-color: rgba(178, 143, 189, 0.947);
+    margin: 10px;
+}
+
+.boxes:hover {
+    transform: scale(1.05); 
+}
+
+.boxes img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: 0;
+    transition: transform 0.2s ease;
+}
+
+.boxes img:hover {
+    transform:scale(1.1);
+}

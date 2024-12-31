@@ -1,0 +1,36 @@
+.des-container{
+   
+    padding: 70px 500px;
+    border-radius: 20px;
+    background-color: white;
+    position: fixed;
+    top: 1cm;
+    left: 33cm ;
+
+    box-shadow: 0 3px 16px rgba(46, 1, 89, 0.757);
+    backdrop-filter: blur(10px); /* Adds a glass effect ^*/
+
+
+}
+/* Hover effect to enlarge container */
+.des-container:hover {
+    box-shadow: 0 6px 30px rgba(46, 1, 89, 0.7);
+}
+h1{
+    color: rgb(31, 1, 59);
+    font-family: monospace;
+    padding: 9px;
+    font-family: 'Courier New', monospace;
+
+}
+p{
+    font-size: 40px;
+    font-family: 'Courier New', monospace;
+
+}
+#color{
+    color: rgb(21, 128, 0);
+    font-size: 20px;
+}
+button{
+    background-color: rgb(31, 4, 56);}

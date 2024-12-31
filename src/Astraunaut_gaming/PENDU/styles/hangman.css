@@ -1,0 +1,307 @@
+/* Global Styles */
+.hangman {
+  background-image: url('./arbe.jpeg');
+  background-repeat: no-repeat;
+  background-size :100%;
+  background-position:cover;
+  width: 50cm;
+  position: relative;
+  top: 5cm;
+  left: 25cm;
+  background-color: #f8f2f2ed;
+  padding: 260px;
+  border-radius: 40px;
+  box-shadow: 0 10px 10px rgba(226, 223, 223, 0.757);
+
+ 
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+/* Header.css */
+.header h1 {
+  position: relative;
+  top: -3cm;
+  left: 13cm;
+  font-family: 'Courier New', monospace;
+  font-size: 48px;
+  text-align: center;
+  color: #5f9d77;
+  display: inline-block;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  animation: textShadow 0.5s ease-in-out infinite;
+}
+
+@keyframes textShadow {
+  0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #e1dfd9, 0 0 30px #00ffc3;
+  }
+  50% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #e1dfd9, 0 0 40px #00ffc3;
+  }
+  100% {
+    
+    text-shadow: 0 0 10px #fff, 0 0 20px #e1dfd9, 0 0 30px #00ffc3;
+    }
+}
+
+.header h2 {
+  position: relative;
+  top: -3cm;
+  font-family: 'Courier New';
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  color: #113800;
+}
+
+.header h1 span {
+  font-size: 100px;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(2px);
+  animation: letterBounce 1s ease infinite;
+  animation-delay: 0.1s;
+  font-weight: bold;
+  text-align: center;
+  color: #000438;
+}
+
+@keyframes letterBounce {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  50% {
+      opacity: 1;
+      transform: translateY(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.header h1 span:hover {
+  transform: translateY(-5px) scale(1.3);
+  color: #1d0127;
+  cursor: pointer;
+}
+
+/* Game Container */
+.game-container {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* Word Styling */
+.word-container {
+  font-size: 90px;
+  font-weight: bold;
+  letter-spacing: 14px;
+  color: #4B0082;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  animation: wordReveal 1s ease-out;
+}
+
+@keyframes wordReveal {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Letter Styling */
+.letter {
+  text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
+  animation: letterBounce 0.5s ease-out;
+}
+
+@keyframes letterBounce {
+  0% {
+      transform: translateY(0);
+      opacity: 0;
+  }
+  50% {
+      transform: translateY(-10px);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+/* Wrong Letters */
+.wrong-letters-container {
+  font-size: 40px;
+  color: #8438ae;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.wrong-letters-container span {
+  color: #ff2323;
+  animation: shake 0.5s ease-out infinite;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* Hangman Figure Container */
+.figure-container {
+  stroke: #8B0000;
+  fill: none;
+  stroke-width: 3px;
+  transition: stroke 0.3s ease;
+}
+
+/* Hover and Active States for Buttons */
+.btn {
+  padding: 20px;
+  background-color: #10c4ec;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  
+  overflow: hidden;
+}
+
+.btn:hover {
+  background-color: #1f1b1f;
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.btn:active {
+  background-color: #110064;
+  transform: scale(0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+}
+
+.btn:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Pop-up Message */
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  animation: fadeIn 0.5s ease, popupGlow 1s ease-in-out infinite;
+}
+
+@keyframes popupGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+}
+
+.popup {
+  background: linear-gradient(135deg, #F5F5F5, #DCDCDC);
+  position: relative;
+  left: -7cm;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: popupZoom 0.3s ease-in-out;
+}
+
+@keyframes popupZoom {
+  0% { transform: scale(0.8); }
+  100% { transform: scale(1); }
+}
+
+/* Animation for Hangman Drawing */
+.figure-part {
+  fill: none;
+  stroke: #ef0000;
+  stroke-width: 11px;
+  opacity: 0;
+  animation: drawFigure 1s ease-out forwards;
+}
+
+@keyframes drawFigure {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Enhanced Letter Animations */
+.letter {
+  animation: letterReveal 0.5s ease;
+}
+
+@keyframes letterReveal {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.word-container {
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
