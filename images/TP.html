@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width= , initial-scale=1.0">
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <!-- CDN Babel pour compiler JSX -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <title>Document</title>
+    </head>
+<body>
+    <div id="app"></div>
+    
+    <script type="text/babel">
+        class PC extends React.Component {
+            constructor(props){
+                super(props)
+                this.description={
+                    d1:'fjekfhkjr',
+                    d2:'kjdfgkfjghkr'
+                }
+                this.prix={
+                    p1:'ffffff',
+                    p2:'jhfer'
+                }
+            }
+            render(){
+                return 
+                    <table>
+                        <tr>
+                            <td>desc</td>
+                            <td>prix</td>
+                        </tr>
+                        <tr>
+                            <td>{this.description.d1}</td>
+                            <td>{this.prix.p1}</td>
+                        </tr>
+                    </table>
+                
+            }
+        }
+
+        ReactDOM.render(<PC />,document.getElementById('app'))
+
+    </script>
+</body>
+</html>
