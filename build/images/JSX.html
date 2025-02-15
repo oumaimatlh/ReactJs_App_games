@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- CDN Babel pour compiler JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    
+    <script type="text/babel">
+
+        const produits = 
+                [
+                    {
+                        img:"P2.jpg",
+                        description: "PC Portable gamer HP VICTUS",
+                        prix: "7490 DH"
+                    },
+                    {
+                        img:"P3.jpg",
+                        description: "PC Portable gamer HP VICTUS",
+                        prix: "4390 DH"
+                    },
+                    {
+                        img:"P'.jpg",
+                        description: "PC Portable Chromebook Acer",
+                        prix: "5770 DH"
+                    },
+                    {
+                        img:"1.jpg",
+                        description: "PC Portable gamer HP",
+                        prix: "1270 DH"
+                    }
+                ];
+
+               
+
+        // creation un composant react de type class : 
+        class PC extends React.Component {
+            render() {
+                return (
+                    <div className="row">
+                        {this.props.p.map((item,index) => (
+                            <div className="card" style={{ width: "18rem" }} key={index}>
+                                <img src={item.img} className="card-img-top" alt="..."/>
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.description}</h5>
+                                    <p className="card-text">{item.prix}</p>
+                                    <a href="#" className="ajouter au panier">Go somewhere</a>
+
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    );
+                    }
+                                        }
+        
+                                 
+                        
+     
+
+
+       
+    
+     
+    
+            ReactDOM.render(<PC p={produits}/>, document.getElementById('app'));
+
+    </script>
+    
+</body>
+</html>
