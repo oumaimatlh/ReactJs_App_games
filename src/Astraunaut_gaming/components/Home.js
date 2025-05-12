@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
-import { FaHome, FaThList, FaHeart, FaCog, FaSearch } from 'react-icons/fa'; // Importer les icônes
+import { FaHome, FaThList, FaHeart, FaCog, FaSignInAlt } from 'react-icons/fa'; // Utilise FaSignInAlt pour "Connexion"
 
 export default function Home() {
     const fixedCardSizes = [
-        'large', 'large', 'small', 'small', 'large', 'large', 'small','small',
-        'large', 'large', 'large', 'large', 'large', 'large', 'large',  'large','large','large'
+        'large', 'large', 'small', 'small', 'large', 'large', 'small', 'small',
+        'large', 'large', 'large', 'large', 'large', 'large', 'large', 'large', 'large', 'large'
     ];
 
     const gameData = [
@@ -23,10 +23,8 @@ export default function Home() {
         { image: '/images/amng.jpeg', title: 'Amoung us', id: '11' },
         { image: '/images/GTA.jpeg', title: 'GTA', id: '12' },
         { image: '/images/oo.gif', title: 'Pac man hunt', id: '13' },
-
         { image: '/images/roblox.jpeg', title: 'roblox', id: '14' },
         { image: '/images/fire.jpeg', title: 'Free Fire', id: '15' },
-
         { image: '/images/8bal.jpeg', title: '8 Ball Pool', id: '16' },
         { image: '/images/call.jpeg', title: 'Call Of Duty', id: '17' },
         { image: '/images/princesse.jpeg', title: 'Habillage Princesse', id: '18' },
@@ -48,22 +46,25 @@ export default function Home() {
                     <input type="text" placeholder='  Search games...' />
                 </div>
                 <nav>
-                    <Link to='/' ><FaHome /> Home</Link>
+                    <Link to='/'><FaHome /> Home</Link>
                     <a href="#"><FaThList /> Categories</a>
                     <a href="#"><FaHeart /> Favorites</a>
                     <a href="#"><FaCog /> Settings</a>
+                    <Link to='/login'><FaSignInAlt /> Connexion</Link> {/* Nouveau lien */}
                 </nav>
             </div>
             <div className="main-content">
-                <div className="game-grid" > 
+                <div className="game-grid">
                     {cardSizes.map((size, index) => (
                         <Link to={`/game/${gameData[index].id}`} key={index} className={`card ${size}`}>
-                        <img
+                            <img
                                 src={gameData[index].image}
                                 alt={gameData[index].title}
                             />
                             <div className="card-body">
-                                <h5 className="card-title" style={{color:'white' , fontSize:'40px'}}>{gameData[index].title}</h5>
+                                <h5 className="card-title" style={{ color: 'white', fontSize: '40px' }}>
+                                    {gameData[index].title}
+                                </h5>
                             </div>
                         </Link>
                     ))}
